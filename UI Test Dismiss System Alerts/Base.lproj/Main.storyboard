@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,81 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1J-EL-Lll">
+                                <rect key="frame" x="202" y="60" width="196" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="initiateSystemAlerts"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="196" id="eUA-xf-Ury"/>
+                                    <constraint firstAttribute="height" constant="30" id="pI8-SA-GGA"/>
+                                </constraints>
+                                <state key="normal" title="Initiate Both System Alerts"/>
+                                <connections>
+                                    <action selector="initiateSystemAlertsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9tS-9k-Vcr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a07-lT-D4B">
+                                <rect key="frame" x="242" y="122" width="116" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="notificationButton"/>
+                                <state key="normal" title="Notification Alert"/>
+                                <connections>
+                                    <action selector="showNotificationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hp3-2Y-ymQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEe-NH-9tR">
+                                <rect key="frame" x="252" y="215" width="96" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="locationButton"/>
+                                <state key="normal" title="Location Alert"/>
+                                <connections>
+                                    <action selector="showLocationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DV3-ni-MQM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification alert not shown." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNT-XW-8VU">
+                                <rect key="frame" x="204" y="172" width="194" height="18"/>
+                                <accessibility key="accessibilityConfiguration" identifier="notificationLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location alert not shown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI0-fT-ZRd">
+                                <rect key="frame" x="215" y="270" width="169" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbf-RT-FEL">
+                                <rect key="frame" x="282" y="433" width="37" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="done"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0E-sg-P8T"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RNT-XW-8VU" firstAttribute="top" secondItem="a07-lT-D4B" secondAttribute="bottom" constant="20" id="2P3-SJ-bJH"/>
+                            <constraint firstItem="a07-lT-D4B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EXw-Hj-cv3"/>
+                            <constraint firstItem="Sbf-RT-FEL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fh7-1M-3p1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sbf-RT-FEL" secondAttribute="bottom" constant="137" id="KLG-Lo-zyK"/>
+                            <constraint firstItem="hEe-NH-9tR" firstAttribute="top" secondItem="RNT-XW-8VU" secondAttribute="bottom" constant="25" id="RTC-tO-dhi"/>
+                            <constraint firstItem="zI0-fT-ZRd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dFN-eV-wEZ"/>
+                            <constraint firstItem="hEe-NH-9tR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dpG-rX-OEx"/>
+                            <constraint firstItem="zI0-fT-ZRd" firstAttribute="top" secondItem="hEe-NH-9tR" secondAttribute="bottom" constant="25" id="eKr-br-xbT"/>
+                            <constraint firstItem="C1J-EL-Lll" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lk3-8r-tUi"/>
+                            <constraint firstItem="C1J-EL-Lll" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="q5x-L1-jw4"/>
+                            <constraint firstItem="RNT-XW-8VU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ujJ-Zt-nkg"/>
+                            <constraint firstItem="a07-lT-D4B" firstAttribute="top" secondItem="C1J-EL-Lll" secondAttribute="bottom" constant="32" id="viq-Mw-8hD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="zI0-fT-ZRd" id="wnc-ZM-t7f"/>
+                        <outlet property="notificationLabel" destination="RNT-XW-8VU" id="EbV-0F-PY3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="479" y="512"/>
         </scene>
     </scenes>
 </document>
